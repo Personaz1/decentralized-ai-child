@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Define remotes for Git repositories -->
+  <remote name="github" fetch="https://github.com/" />
+  <remote name="decentralized-ai" fetch="ssh://git@git.decentralized-ai.org/" />
+
+  <!-- Default settings for all projects -->
+  <default remote="github" revision="main" sync-j="4" />
+
+  <!-- Core project repository -->
+  <project name="Personaz1/decentralized-ai-child" path="src/core" />
+
+  <!-- Submodules for decentralized AI components -->
+  <project name="aidotse/DecentralizedAI" path="src/federated-learning" revision="main" />
+  <project name="upstarter/automata" path="src/autonomous-agents" />
+  <project name="anon-ai-labs/ANON-AI" path="src/hybrid-integration" />
+
+  <!-- Dependency: TensorFlow with privacy extensions -->
+  <project name="tensorflow/tensorflow" path="third_party/tensorflow" revision="v2.15.0" />
+  <project name="tf-privacy/tf-privacy" path="third_party/tf-privacy" />
+
+  <!-- Integration with Ollama for local LLM management -->
+  <project name="ollama/ollama" path="tools/ollama" />
+  <project name="open-webui/open-webui" path="tools/webui" />
+
+  <!-- Security and privacy modules -->
+  <project name="anon-ai-labs/security_privacy" path="src/security" />
+  <project name="defi-ventures/wasmcloud-ipfs" path="src/decentralized-storage" />
+
+  <!-- Documentation and testing -->
+  <project name="Personaz1/decentralized-ai-child/docs" path="docs" />
+  <project name="Personaz1/decentralized-ai-child/tests" path="tests" />
+
+  <!-- Utility scripts -->
+  <project name="sdohuajia/Dria" path="scripts/dria-node" />
+  <linkfile src="scripts/dria-node/Dria.sh" dest="deploy.sh" />
+</manifest>
