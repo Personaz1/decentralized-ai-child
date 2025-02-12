@@ -87,7 +87,7 @@ All crypto must use audited libraries (libsodium, OpenSSL)
 No raw eval() or pickle usage
 
 Security Practices
-Vulnerability Reports: Email security@decentralized-ai-child.org (PGP key in SECURITY.md)
+Vulnerability Reports: @personaz1 TG
 
 Audits: Cryptographic code requires 2 maintainer approvals
 
@@ -109,9 +109,8 @@ Weekly Sync: Every Friday 14:00 UTC (calendar in Discord)
 License
 By contributing, you agree to license your work under the AGPLv3 License. All derivative works must remain open-source.
 
-Need Help? Ask in Discord or mention @maintainers in your PR!
 
-Copy
+ @personaz1 TG
 
 ---
 
