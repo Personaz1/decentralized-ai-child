@@ -1,6 +1,9 @@
 # decentralized-ASI-child
 # Decentralized AGI Child
-Decentralized AI for everybody. Personal assistance on your own hardware. @personaz1
+
+That depends on you, and not on someone else, because in this there is no teacher, no pupil; there is no leader; there is no guru; there is no Master, no Saviour. You yourself are the teacher and the pupil; you are the Master; you are the guru; you are the leader; you are everything. And to understand is to transform what is.
+
+@personaz1
 
 *Project Vision:*  
 A fully open-source, decentralized AGI (ASI) child project designed to integrate and synergize independent nodes of intelligence into a self-evolving ecosystem. The goal is to enable emergent intelligence through dynamic, adaptive, and decentralized learning systems.
