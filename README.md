@@ -1,8 +1,3 @@
-Thought for
-24s
-Expand for details
-Here is the English translation of the provided text:
-
 Decentralized AI System
 
 An artificial intelligence system with capabilities for self-analysis, self-evolution, and automatic code improvement.
