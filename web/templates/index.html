@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Заголовок -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">DecentralizedAI</h1>
+            <p class="text-gray-600">Децентрализованная система искусственного интеллекта</p>
+        </header>
+
+        <!-- Основной контент -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Чат -->
+            <div class="lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <div id="chat-messages" class="h-[600px] overflow-y-auto mb-4 space-y-4">
+                    <!-- Сообщения будут добавляться здесь -->
+                </div>
+                
+                <div class="flex space-x-4">
+                    <input type="text" 
+                           id="message-input" 
+                           class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           placeholder="Введите ваше сообщение...">
+                    <button id="send-button" 
+                            class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Отправить
+                    </button>
+                </div>
+            </div>
+
+            <!-- Информация о системе -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Статус системы</h2>
+                <div id="system-status" class="space-y-2">
+                    <!-- Статус будет обновляться здесь -->
+                </div>
+
+                <h2 class="text-xl font-semibold mt-6 mb-4">Активные узлы</h2>
+                <div id="active-nodes" class="space-y-2">
+                    <!-- Список узлов будет обновляться здесь -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WebSocket соединение
+        const ws = new WebSocket(`ws://${window.location.host}/ws/chat`);
+        
+        // Элементы интерфейса
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        const chatMessages = document.getElementById('chat-messages');
+        const systemStatus = document.getElementById('system-status');
+        const activeNodes = document.getElementById('active-nodes');
+
+        // Обработка отправки сообщения
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                ws.send(message);
+                addMessage('user', message);
+                messageInput.value = '';
+            }
+        }
+
+        // Добавление сообщения в чат
+        function addMessage(type, content) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `p-3 rounded-lg ${
+                type === 'user' ? 'bg-blue-100 ml-auto' : 'bg-gray-100'
+            } max-w-[80%]`;
+            messageDiv.textContent = content;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Обработка WebSocket сообщений
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            addMessage('ai', data.response);
+        };
+
+        // Обновление статуса системы
+        async function updateSystemStatus() {
+            try {
+                const response = await fetch('/api/system/status');
+                const data = await response.json();
+                
+                systemStatus.innerHTML = `
+                    <p>Активных узлов: ${data.active_nodes}</p>
+                    <p>Всего запросов: ${data.total_requests}</p>
+                    <p>Среднее время ответа: ${data.average_response_time.toFixed(2)}мс</p>
+                    <p>Состояние системы: ${data.system_health}</p>
+                `;
+            } catch (error) {
+                console.error('Ошибка обновления статуса:', error);
+            }
+        }
+
+        // Обновление списка узлов
+        async function updateActiveNodes() {
+            try {
+                const response = await fetch('/api/nodes');
+                const nodes = await response.json();
+                
+                activeNodes.innerHTML = nodes.map(node => `
+                    <div class="p-2 border rounded">
+                        <p class="font-medium">${node.node_id}</p>
+                        <p class="text-sm text-gray-600">Статус: ${node.status}</p>
+                        <p class="text-sm text-gray-600">Нагрузка: ${(node.current_load * 100).toFixed(1)}%</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Ошибка обновления узлов:', error);
+            }
+        }
+
+        // Периодическое обновление информации
+        setInterval(updateSystemStatus, 5000);
+        setInterval(updateActiveNodes, 5000);
+
+        // Начальное обновление
+        updateSystemStatus();
+        updateActiveNodes();
+    </script>
+</body>
+</html> 

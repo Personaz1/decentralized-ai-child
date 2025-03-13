@@ -1,0 +1,52 @@
+# Основные зависимости
+torch>=2.0.0
+transformers>=4.30.0
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Асинхронность и сетевые взаимодействия
+aiohttp>=3.8.0
+asyncio>=3.4.3
+websockets>=11.0.0
+
+# Анализ кода и тестирование
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+astroid>=2.15.0
+pylint>=2.17.0
+black>=23.7.0
+isort>=5.12.0
+mypy>=1.5.0
+
+# Безопасность
+cryptography>=41.0.0
+pyyaml>=6.0.0
+python-jose>=3.3.0
+passlib>=1.7.4
+bcrypt>=4.0.0
+
+# Мониторинг и логирование
+prometheus-client>=0.17.0
+structlog>=23.1.0
+python-json-logger>=2.0.0
+
+# Утилиты
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+colorama>=0.4.6
+rich>=13.4.0
+click>=8.1.0
+
+# Дополнительные зависимости
+plotly>=5.18.0
+requests>=2.31.0
+coverage>=7.4.0
+GPUtil>=1.4.0
+huggingface-hub>=0.20.0
+pydantic==1.8.2
+accelerate>=0.27.0
+sentencepiece>=0.1.99
+protobuf>=4.25.0
+safetensors>=0.4.0 

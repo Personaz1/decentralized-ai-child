@@ -1,0 +1,38 @@
+text:
+  name: "google/gemma-3-4b-it"
+  type: "text"
+  version: "4b"
+  device: "cuda"
+  dtype: "float16"
+  max_length: 2048
+  batch_size: 4
+  temperature: 0.7
+  top_p: 0.9
+  load_in_8bit: true
+  load_in_4bit: false
+
+vision:
+  name: "google/gemma-3-4b-it"
+  type: "vision"
+  version: "4b"
+  device: "cuda"
+  dtype: "float16"
+  max_length: 2048
+  batch_size: 2
+  temperature: 0.7
+  top_p: 0.9
+  load_in_8bit: true
+  load_in_4bit: false
+
+audio:
+  name: "facebook/wav2vec2-base-960h"
+  type: "audio"
+  version: "base"
+  device: "cuda"
+  dtype: "float16"
+  max_length: 16000
+  batch_size: 4
+  temperature: 0.7
+  top_p: 0.9
+  load_in_8bit: true
+  load_in_4bit: false 

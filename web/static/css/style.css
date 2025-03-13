@@ -1,0 +1,145 @@
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Применение анимаций */
+.message {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.system-status-item {
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* Стилизация скроллбара */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Дополнительные стили для чата */
+#chat-messages {
+    scroll-behavior: smooth;
+}
+
+.message {
+    transition: all 0.3s ease;
+}
+
+.message:hover {
+    transform: translateX(5px);
+}
+
+/* Стили для статуса системы */
+#system-status p {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    margin-bottom: 0.5rem;
+}
+
+/* Стили для активных узлов */
+#active-nodes div {
+    transition: all 0.3s ease;
+}
+
+#active-nodes div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    #chat-messages {
+        height: 400px;
+    }
+}
+
+/* Стили для индикаторов загрузки */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Стили для уведомлений */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.notification.error {
+    background-color: #f44336;
+}
+
+/* Стили для кнопок */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Стили для инпутов */
+input {
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+} 

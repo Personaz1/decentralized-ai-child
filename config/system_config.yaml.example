@@ -1,0 +1,84 @@
+system:
+  name: "DecentralizedAI"
+  version: "1.0.0"
+  min_nodes: 1
+  max_nodes: 3
+  log_level: "INFO"
+  data_dir: "data"
+  temp_dir: "temp"
+
+monitoring:
+  performance_interval: 60
+  alert_thresholds:
+    cpu: 80
+    memory: 80
+    disk: 80
+
+network:
+  optimization_interval: 300
+  connection_timeout: 5
+  retry_attempts: 3
+
+knowledge_exchange:
+  model_update_interval: 3600
+  min_confidence: 0.7
+  max_models: 5
+
+evolution:
+  population_size: 5
+  mutation_rate: 0.1
+  crossover_rate: 0.7
+  elite_size: 1
+  generations: 3
+
+self_reflection:
+  interval: 300
+  analysis_depth: "basic"
+  improvement_threshold: 0.1
+
+testing:
+  interval: 3600
+  coverage_threshold: 0.5
+  test_types: ["unit", "integration"]
+
+code_analysis:
+  interval: 300
+  analysis_depth: "basic"
+  sources: ["local"]
+
+validation:
+  interval: 300
+  validation_levels: ["syntax", "security", "performance"]
+  max_validation_time: 10
+
+security:
+  backup_enabled: true
+  backup_retention_days: 30
+  max_backups: 100
+  validation_checks:
+    - dangerous_patterns
+    - dependencies
+    - permissions
+    - integrity
+  suspicious_dependencies:
+    - cryptography
+    - paramiko
+    - requests
+  dangerous_patterns:
+    - "eval\\("
+    - "exec\\("
+    - "os\\.system\\("
+    - "subprocess\\.call\\("
+    - "subprocess\\.Popen\\("
+    - "pickle\\.loads\\("
+    - "yaml\\.load\\("
+    - "json\\.loads\\("
+    - "marshal\\.loads\\("
+    - "base64\\.b64decode\\("
+  permissions:
+    read: ["r", "rb"]
+    write: ["w", "wb", "a", "ab"]
+    execute: ["x"]
+  integrity_check:
+    enabled: true
+    hash_algorithm: "sha256" 
