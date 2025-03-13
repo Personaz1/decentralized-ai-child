@@ -1,186 +1,186 @@
-# Руководство по разработке децентрализованной ИИ-системы
+# AI Agents Development Guide
 
-## Общее описание
+## General Description
 
-Проект представляет собой децентрализованную систему искусственного интеллекта, способную к самоанализу, самоэволюции и автоматическому улучшению кода. Система построена на принципах:
+The project is a decentralized artificial intelligence system capable of self-analysis, self-evolution, and automatic code improvement. The system is built on the principles of:
 
-1. Децентрализации - распределение вычислений между узлами
-2. Самоанализа - постоянный анализ кодовой базы
-3. Самоэволюции - автоматическое улучшение кода
-4. Безопасности - валидация и проверка всех изменений
-5. Масштабируемости - возможность добавления новых узлов
+1. Decentralization - distribution of computations across nodes
+2. Self-analysis - continuous codebase analysis
+3. Self-evolution - automatic code improvement
+4. Security - validation and verification of all changes
+5. Scalability - ability to add new nodes
 
-## Архитектура системы
+## System Architecture
 
-### Основные компоненты
+### Core Components
 
 1. **DecentralizedAISystem** (src/core/decentralized_ai.py)
-   - Основной класс системы
-   - Управление узлами
-   - Координация компонентов
-   - Обработка запросов
+   - Main system class
+   - Node management
+   - Component coordination
+   - Request handling
 
 2. **SelfReflectionSystem** (src/core/self_reflection.py)
-   - Анализ кодовой базы
-   - Поиск улучшений
-   - Внедрение изменений
+   - Codebase analysis
+   - Improvement search
+   - Change implementation
 
 3. **SelfEvolutionSystem** (src/core/self_evolution.py)
-   - Создание вариантов системы
-   - Оценка пригодности
-   - Отбор лучших вариантов
-   - Создание новых поколений
+   - System variant creation
+   - Fitness evaluation
+   - Best variant selection
+   - New generation creation
 
 4. **AutoTestingSystem** (src/core/auto_testing.py)
-   - Генерация тестов
-   - Запуск тестов
-   - Анализ результатов
-   - Ведение истории тестов
+   - Test generation
+   - Test execution
+   - Result analysis
+   - Test history tracking
 
 5. **ValidationSystem** (src/core/validation_system.py)
-   - Проверка синтаксиса
-   - Валидация зависимостей
-   - Проверка безопасности
-   - Проверка производительности
+   - Syntax checking
+   - Dependency validation
+   - Security verification
+   - Performance validation
 
 6. **CodeAnalysisSystem** (src/core/code_analysis_system.py)
-   - Анализ сложности кода
-   - Поиск паттернов
-   - Анализ зависимостей
-   - Поиск улучшений
+   - Code complexity analysis
+   - Pattern detection
+   - Dependency analysis
+   - Improvement search
 
 7. **LLMSystem** (src/core/llm_system.py)
-   - Работа с языковыми моделями
-   - Генерация кода
-   - Улучшение кода
-   - Кэширование результатов
+   - Language model integration
+   - Code generation
+   - Code improvement
+   - Result caching
 
 8. **SecuritySystem** (src/core/security_system.py)
-   - Проверка безопасности
-   - Управление бэкапами
-   - Мониторинг изменений
-   - Контроль доступа
+   - Security verification
+   - Backup management
+   - Change monitoring
+   - Access control
 
-## План реализации
+## Implementation Plan
 
-### Этап 1: Базовая инфраструктура
-- [x] Создание структуры проекта
-- [x] Настройка конфигурации
-- [x] Реализация базовых классов
-- [x] Настройка логирования
+### Phase 1: Basic Infrastructure
+- [x] Project structure creation
+- [x] Configuration setup
+- [x] Basic class implementation
+- [x] Logging setup
 
-### Этап 2: Системы анализа и валидации
-- [x] Реализация CodeAnalysisSystem
-- [x] Реализация ValidationSystem
-- [x] Реализация SecuritySystem
-- [ ] Улучшение проверок безопасности
-- [ ] Добавление метрик качества кода
+### Phase 2: Analysis and Validation Systems
+- [x] CodeAnalysisSystem implementation
+- [x] ValidationSystem implementation
+- [x] SecuritySystem implementation
+- [ ] Security check improvements
+- [ ] Code quality metrics addition
 
-### Этап 3: Система LLM
-- [x] Базовая интеграция с моделями
-- [x] Реализация кэширования
-- [ ] Поддержка различных моделей
-- [ ] Улучшение промптов
-- [ ] Параллельная генерация
+### Phase 3: LLM System
+- [x] Basic model integration
+- [x] Caching implementation
+- [ ] Multiple model support
+- [ ] Prompt improvements
+- [ ] Parallel generation
 
-### Этап 4: Самоанализ и эволюция
-- [x] Базовая реализация SelfReflectionSystem
-- [x] Базовая реализация SelfEvolutionSystem
-- [ ] Улучшение алгоритмов эволюции
-- [ ] Оптимизация отбора вариантов
-- [ ] Система оценки пригодности
+### Phase 4: Self-analysis and Evolution
+- [x] Basic SelfReflectionSystem implementation
+- [x] Basic SelfEvolutionSystem implementation
+- [ ] Evolution algorithm improvements
+- [ ] Variant selection optimization
+- [ ] Fitness evaluation system
 
-### Этап 5: Тестирование
-- [x] Базовая реализация AutoTestingSystem
-- [ ] Улучшение генерации тестов
-- [ ] Расширение покрытия
-- [ ] Интеграционные тесты
-- [ ] Нагрузочное тестирование
+### Phase 5: Testing
+- [x] Basic AutoTestingSystem implementation
+- [ ] Test generation improvements
+- [ ] Coverage expansion
+- [ ] Integration tests
+- [ ] Load testing
 
-### Этап 6: Сетевое взаимодействие
-- [ ] Реализация протокола обмена данными
-- [ ] Система консенсуса
-- [ ] Синхронизация узлов
-- [ ] Балансировка нагрузки
-- [ ] Восстановление после сбоев
+### Phase 6: Network Interaction
+- [ ] Data exchange protocol implementation
+- [ ] Consensus system
+- [ ] Node synchronization
+- [ ] Load balancing
+- [ ] Failure recovery
 
-### Этап 7: Мониторинг и управление
-- [ ] Система метрик
-- [ ] Мониторинг производительности
-- [ ] Управление ресурсами
-- [ ] Алерты и уведомления
-- [ ] Визуализация данных
+### Phase 7: Monitoring and Management
+- [ ] Metrics system
+- [ ] Performance monitoring
+- [ ] Resource management
+- [ ] Alerts and notifications
+- [ ] Data visualization
 
-## Текущие приоритеты
+## Current Priorities
 
-1. Улучшение системы безопасности
-   - Реализация проверок уязвимостей
-   - Улучшение системы бэкапов
-   - Контроль доступа
+1. Security System Improvements
+   - Vulnerability check implementation
+   - Backup system enhancement
+   - Access control
 
-2. Расширение возможностей LLM
-   - Поддержка различных моделей
-   - Улучшение качества генерации
-   - Оптимизация производительности
+2. LLM Capabilities Expansion
+   - Multiple model support
+   - Generation quality improvement
+   - Performance optimization
 
-3. Улучшение эволюционных алгоритмов
-   - Более эффективный отбор
-   - Лучшая оценка пригодности
-   - Оптимизация мутаций
+3. Evolutionary Algorithm Improvements
+   - More efficient selection
+   - Better fitness evaluation
+   - Mutation optimization
 
-4. Развитие тестирования
-   - Улучшение генерации тестов
-   - Расширение покрытия
-   - Интеграционные тесты
+4. Testing Development
+   - Test generation improvements
+   - Coverage expansion
+   - Integration tests
 
-## Рекомендации по разработке
+## Development Guidelines
 
-1. **Безопасность**
-   - Всегда проверять изменения
-   - Создавать бэкапы
-   - Валидировать код
-   - Тестировать изменения
+1. **Security**
+   - Always verify changes
+   - Create backups
+   - Validate code
+   - Test changes
 
-2. **Производительность**
-   - Использовать кэширование
-   - Оптимизировать запросы
-   - Мониторить ресурсы
-   - Балансировать нагрузку
+2. **Performance**
+   - Use caching
+   - Optimize queries
+   - Monitor resources
+   - Balance load
 
-3. **Качество кода**
-   - Следовать PEP 8
-   - Писать тесты
-   - Документировать код
-   - Проверять типы
+3. **Code Quality**
+   - Follow PEP 8
+   - Write tests
+   - Document code
+   - Check types
 
-4. **Масштабируемость**
-   - Использовать асинхронность
-   - Разделять ответственность
-   - Минимизировать зависимости
-   - Обеспечивать модульность
+4. **Scalability**
+   - Use asyncio
+   - Separate concerns
+   - Minimize dependencies
+   - Ensure modularity
 
-## Метрики успеха
+## Success Metrics
 
-1. **Качество кода**
-   - Покрытие тестами > 80%
-   - Отсутствие критических уязвимостей
-   - Соответствие PEP 8
-   - Документация
+1. **Code Quality**
+   - Test coverage > 80%
+   - No critical vulnerabilities
+   - PEP 8 compliance
+   - Documentation
 
-2. **Производительность**
-   - Время ответа < 100ms
-   - Использование CPU < 70%
-   - Использование памяти < 80%
-   - Кэш-хиты > 50%
+2. **Performance**
+   - Response time < 100ms
+   - CPU usage < 70%
+   - Memory usage < 80%
+   - Cache hits > 50%
 
-3. **Безопасность**
-   - Успешные проверки безопасности
-   - Отсутствие утечек
-   - Валидные бэкапы
-   - Контроль доступа
+3. **Security**
+   - Successful security checks
+   - No leaks
+   - Valid backups
+   - Access control
 
-4. **Эволюция**
-   - Улучшение метрик
-   - Успешные мутации
-   - Эффективный отбор
-   - Стабильность системы 
+4. **Evolution**
+   - Metric improvements
+   - Successful mutations
+   - Efficient selection
+   - System stability 
