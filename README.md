@@ -1,73 +1,110 @@
-# Децентрализованная ИИ-система
+Thought for
+24s
+Expand for details
+Here is the English translation of the provided text:
 
-Система искусственного интеллекта с возможностями самоанализа, самоэволюции и автоматического улучшения кода.
+Decentralized AI System
 
-## Особенности
+An artificial intelligence system with capabilities for self-analysis, self-evolution, and automatic code improvement.
 
-- Децентрализованная архитектура
-- Автоматическое распределение нагрузки
-- Веб-интерфейс для взаимодействия
-- Мониторинг состояния системы
-- Поддержка различных моделей ИИ
-- Автоматическое масштабирование
+Features
 
-## Требования к системе
+Decentralized architecture
+Automatic load distribution
+Web interface for interaction
+System status monitoring
+Support for various AI models
+Automatic scaling
+System Requirements
 
-- Python 3.9+
-- CUDA 11.8+ (для GPU)
-- 16GB+ RAM
-- 100GB+ SSD
-- Linux/Unix система
+Python 3.9+
+CUDA 11.8+ (for GPU)
+16GB+ RAM
+100GB+ SSD
+Linux/Unix system
+Installation
 
-## Установка
+Clone the repository:
+text
 
-1. Клонируйте репозиторий:
-```bash
+Collapse
+
+Wrap
+
+Copy
 git clone https://github.com/your-repo/decentralized-ai.git
 cd decentralized-ai
-```
+Create a virtual environment:
+text
 
-2. Создайте виртуальное окружение:
-```bash
+Collapse
+
+Wrap
+
+Copy
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# или
+# or
 .\venv\Scripts\activate  # Windows
-```
+Install dependencies:
+text
 
-3. Установите зависимости:
-```bash
+Collapse
+
+Wrap
+
+Copy
 pip install -r requirements.txt
-```
+Configure the system:
+text
 
-4. Настройте конфигурацию:
-```bash
+Collapse
+
+Wrap
+
+Copy
 cp config/system_config.yaml.example config/system_config.yaml
-# Отредактируйте config/system_config.yaml под ваши нужды
-```
+# Edit config/system_config.yaml to suit your needs
+Running Tests
 
-## Запуск тестов
+Run all tests:
+text
 
-1. Запуск всех тестов:
-```bash
+Collapse
+
+Wrap
+
+Copy
 pytest
-```
+Run with coverage:
+text
 
-2. Запуск с покрытием:
-```bash
+Collapse
+
+Wrap
+
+Copy
 pytest --cov=src tests/
-```
+Run a specific test:
+text
 
-3. Запуск конкретного теста:
-```bash
+Collapse
+
+Wrap
+
+Copy
 pytest tests/test_specific.py -v
-```
+Project Structure
 
-## Структура проекта
+text
 
-```
+Collapse
+
+Wrap
+
+Copy
 src/
-├── core/                 # Основные компоненты системы
+├── core/                 # Core system components
 │   ├── decentralized_ai.py
 │   ├── self_reflection.py
 │   ├── self_evolution.py
@@ -76,66 +113,57 @@ src/
 │   ├── code_analysis_system.py
 │   ├── llm_system.py
 │   └── security_system.py
-├── utils/               # Вспомогательные функции
-├── tests/              # Тесты
+├── utils/               # Utility functions
+├── tests/              # Tests
 └── api/                # API endpoints
 
 config/
-├── system_config.yaml  # Основная конфигурация
-└── models_config.yaml  # Конфигурация моделей
+├── system_config.yaml  # Main configuration
+└── models_config.yaml  # Model configuration
 
 docs/
-├── ai_agents_guide.md  # Руководство для ИИ-агентов
-└── development_guide.md # Руководство по разработке
+├── ai_agents_guide.md  # Guide for AI agents
+└── development_guide.md # Development guide
 
-models/                 # Кэш моделей
-cache/                  # Кэш генераций
-```
+models/                 # Model cache
+cache/                  # Generation cache
+Key Features
 
-## Основные возможности
+Self-Analysis
+Code complexity analysis
+Design pattern detection
+Dependency analysis
+Potential improvement detection
+Self-Evolution
+System variant creation
+Fitness evaluation
+Selection of best variants
+New generation creation
+Automated Testing
+Test generation
+Test execution
+Result analysis
+Test history management
+Security
+Code security checks
+Backup management
+Change monitoring
+Access control
+LLM Integration
+Code generation
+Code improvement
+Result caching
+Generation history
+Development
+Detailed development instructions are available in docs/development_guide.md.
 
-1. **Самоанализ**
-   - Анализ сложности кода
-   - Поиск паттернов проектирования
-   - Анализ зависимостей
-   - Поиск потенциальных улучшений
-
-2. **Самоэволюция**
-   - Создание вариантов системы
-   - Оценка пригодности
-   - Отбор лучших вариантов
-   - Создание новых поколений
-
-3. **Автоматическое тестирование**
-   - Генерация тестов
-   - Запуск тестов
-   - Анализ результатов
-   - Ведение истории тестов
-
-4. **Безопасность**
-   - Проверка безопасности кода
-   - Управление бэкапами
-   - Мониторинг изменений
-   - Контроль доступа
-
-5. **Работа с LLM**
-   - Генерация кода
-   - Улучшение кода
-   - Кэширование результатов
-   - История генераций
-
-## Разработка
-
-Подробные инструкции по разработке доступны в [docs/development_guide.md](docs/development_guide.md).
-
-## Лицензия
-
+License
 MIT License
 
-## Авторы
+Authors
+uastar@proton.me
 
-- Ваше имя <your.email@example.com>
+Support
+If you have any questions or issues, please create an issue in the project repository.
 
-## Поддержка
-
-Если у вас возникли вопросы или проблемы, создайте issue в репозитории проекта. 
+This translation covers all sections of the original query, formatted for clarity using markdown. Let me know if you need further adjustments!
